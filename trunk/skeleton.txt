@@ -54,36 +54,34 @@ $recursion->publical->money->exchange
 $recursion->publical->money->exchange($euros, $to_whom)
 $recursion->publical->show_availible_lendings()
 
-
 CREATE TABLE  `naturalmoney`.`person` (
-`id` INT NOT NULL DEFAULT  `1000`,
+`id` INT NOT NULL AUTO_INCREMENT ,
 `creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 `name` TEXT NOT NULL ,
 `address` TEXT NOT NULL ,
 `country` TEXT NOT NULL ,
 `phone` TEXT NOT NULL ,
-`birthdate` DATETIME NOT NULL ,
-`social_security_number` VARCHAR( 10 ) NOT NULL ,
-`email` TEXT,
-`active` BOOL DEFAULT FALSE,
+`birthdate` DATE NOT NULL ,
+`social_security_number` TEXT NOT NULL ,
+`email` TEXT NOT NULL ,
+`active` BOOL DEFAULT NULL,
 PRIMARY KEY (  `id` )
-) ENGINE = MYISAM ;
+) ENGINE = MYISAM 
 
 
 CREATE TABLE  `naturalmoney`.`account` (
-`id` INT NOT NULL DEFAULT  `1000`,
-`balance` DOUBLE NOT NULL DEFAULT `0`,
+`id` INT NOT NULL AUTO_INCREMENT ,
+`balance` DOUBLE NOT NULL DEFAULT  '0',
 `owner` INT NOT NULL ,
-`last_refresh` TIMESTAMP,
-`loggin_ip` TEXT,
+`last_refresh` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 `username` TEXT NOT NULL ,
 `password` TEXT NOT NULL ,
-PRIMARY KEY (  `id` )
-) ENGINE = MYISAM ;
-
+`active` BOOL DEFAULT NULL ,
+UNIQUE (`id`)
+) ENGINE = MYISAM 
 
 CREATE TABLE  `naturalmoney`.`log` (
-`id` INT NOT NULL DEFAULT  `1`,
+`id` INT NOT NULL AUTO_INCREMENT ,
 `login` INT ,
 `table` TEXT ,
 `call` TEXT ,
@@ -102,9 +100,9 @@ PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM ;
 
 CREATE TABLE  `naturalmoney`.`note` (
-`id` INT NOT NULL DEFAULT  `1`,
-`account` INT ,
-`barcode` INT ,
+`id` INT NOT NULL AUTO_INCREMENT ,
+`account` INT NOT NULL ,
+`barcode` INT NOT NULL ,
 `money` DOUBLE ,
 `creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 PRIMARY KEY (  `id` )
