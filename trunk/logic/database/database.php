@@ -1,5 +1,4 @@
 <?php
-include("table/table.php");
 
 class database {
     function __construct($recursion)
@@ -9,6 +8,7 @@ class database {
     	$database = $recursion->settings->mysql_database;
         mysql_select_db($database, $this->connection);
 
+    	include("table/table.php");
     	$this->tables = mysql_fetch_assoc($this->query("SHOW TABLES FROM $database"));
     	foreach($this->tables as $table)
     	{
@@ -28,5 +28,4 @@ class database {
 }
 
 
-$recursion->database = new database($recursion);
 ?>

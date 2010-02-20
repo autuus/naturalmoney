@@ -1,11 +1,11 @@
 <?php
-include("account/account.php");
 
 class personal {
     function __construct($recursion)
     {
         $this->recursion = $recursion;
     	if ($account = $this->logged_in()) {
+    		include("account/account.php");
     		$this->account = new account($recursion, $account);
             $this->details = $recursion->database->person->select("id=".$account["owner"]);
         }
@@ -68,5 +68,4 @@ class personal {
     }
 }
 
-$recursion->personal = new personal($recursion);
 ?>
