@@ -1,6 +1,12 @@
 <?php
-include("curl.php");
-echo send_request($_GET["call"], $_POST);
+include("../server/main.php");
+print_r($_GET);
+if ($_GET["page"] == "register") {
+	$page = "register";
+	echo "page/page_$page.php";
+}
+elseif ($recursion->personal->logged_in()) {
+}
 ?>
 
 <style type="text/css">
@@ -9,10 +15,10 @@ echo send_request($_GET["call"], $_POST);
   width: 60%;
   height: 30%;
   left: 20%;
-  top: 35%;
+  top: 20%;
 }
 </style>
-<div align="center" style="position: absolute; left: 40%;top: 40%;">
-<?php include("page/page_".str_replace(".", "", $_GET["page"]).".php"); ?>
-<a href="?page=register">rekister&ouml;idy</button>
+<div align="center" style="position: absolute; left: 30%;top: 30%;">
+<font color="red"><?php echo $return; ?></font><br>
+<?php include("page/page_$page.php"); ?>
 </div>

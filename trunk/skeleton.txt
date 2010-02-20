@@ -73,6 +73,7 @@ CREATE TABLE  `naturalmoney`.`account` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `balance` DOUBLE NOT NULL DEFAULT  '0',
 `owner` INT NOT NULL ,
+`login_ip` TEXT NOT NULL ,
 `last_refresh` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 `username` TEXT NOT NULL ,
 `password` TEXT NOT NULL ,

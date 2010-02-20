@@ -9,9 +9,10 @@ class database {
         mysql_select_db($database, $this->connection);
 
     	include("table/table.php");
-    	$this->tables = mysql_fetch_assoc($this->query("SHOW TABLES FROM $database"));
-    	foreach($this->tables as $table)
+    	$result = $this->query("SHOW TABLES FROM $database");
+    	while($table = mysql_fetch_assoc($result))
     	{
+    		$table = $table["Tables_in_naturalmoney"];
     		$this->$table = new table($recursion, $table);
     	}
     }

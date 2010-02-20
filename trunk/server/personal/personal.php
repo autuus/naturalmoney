@@ -7,16 +7,15 @@ class personal {
     	if ($account = $this->logged_in()) {
     		include("account/account.php");
     		$this->account = new account($recursion, $account);
-            $this->details = $recursion->database->person->select("id=".$account["owner"]);
+            $this->details = $recursion->database->person->select("id='".$account["owner"]."'");
         }
     }
 
     public function logged_in()
     {
         if ($id = $_SESSION["login"]) {
-            $account = $this->recursion->database->account->select("id=$id");
+        	$account = $this->recursion->database->account->select("id=$id");
             if ($_SESSION["hash"] == md5($account["username"] . $_SERVER['REMOTE_ADDR'])) {
-            	$account["password"] = "";
                 return $account["username"];
             }
         }
@@ -25,13 +24,13 @@ class personal {
 
     public function create_person($array)
     {
-    	if ($person = $this->recursion->database->person->select(
-    	"username=".$array["username"])) {
+    	if ($person = $this->recursion->database->account->select(
+    	"username='".$array["username"]."'")) {
     		throw new Exception("username is allredy in use");
     	}
     	if ($person = $this->recursion->database->person->select(
-    	"social_security_number=".$array["social_security_number"])) {
-    		throw new Exception("Social security number is allredy in use");
+    	"social_security_number='".$array["social_security_number"]."'")) {
+    		throw new Exception("social security number is allredy in use");
     	}
 
         $person = Array();
@@ -42,9 +41,8 @@ class personal {
     	$person["social_security_number"] = $array["social_security_number"];
     	$person["email"] = $array["email"];
 
-
         $account["username"] = $array["username"];
-        $account["password"] = $array["password"];
+        $account["password"] = md5($array["password"]);
 
         if (!$this->recursion->database->person->insert($person)) {
         	throw new Exception("Person was not created");
@@ -56,7 +54,8 @@ class personal {
                 "owner" => $person["id"],
                 "username" => $account["username"],
                 "password" => $account["password"])
-        	);
+        );
+    	return true;
     }
 
     public function login($username, $password = "")
@@ -66,16 +65,17 @@ class personal {
             "username" => $username);
 
         if (!$login = $this->recursion->database->account->select($login)) {
-        	throw new Exception("Invalid username or password");
+        	throw new Exception("invalid username or password");
         }
     	if (!$login["active"]) {
-    		throw new Exception("Your account has not been activated yet");
+    		throw new Exception("your account has not been activated yet");
     	}
 
 		$this->recursion->database->account->update(
-            "loggin_ip='" . $_SERVER['REMOTE_ADDR'] . "'", "id=" . $login["id"]);
+            "login_ip='" . $_SERVER['REMOTE_ADDR'] . "'", "id='" . $login["id"]."'");
         $_SESSION["login"] = $login["id"];
-        $_SESSION["login_hash"] = md5($login["username"] . $_SERVER['REMOTE_ADDR']);
+        $_SESSION["hash"] = md5($login["username"] . $_SERVER['REMOTE_ADDR']);
+    	return true;
     }
 }
 

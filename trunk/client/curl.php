@@ -18,9 +18,26 @@ function send_request( $call, $args = false)
 
 	if ($args) {
 		curl_setopt($ch, CURLOPT_POST, true);
+
+		// this should be done more cleanly
 		foreach ($args AS $key=>$value)
-			$post_url .= $key.'='.$value.'&';
+		{
+			if (is_array($value)) {
+				foreach ($value AS $ke=>$val)
+				{
+					if (is_array($val)) {
+						foreach ($val AS $k=>$v)
+							$post_url .= $key.'['.$ke.']['.$k.']='.$v.'&';
+					}
+					else
+						$post_url .= $key.'['.$ke.']='.$val.'&';
+				}
+			}
+			else
+				$post_url .= $key.'='.$value.'&';
+		}
 		$post_url = rtrim($post_url, '&');
+		//echo $post_url."<br>".urldecode(http_build_query($args))."<br>";
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $post_url);
 	}
 	curl_setopt_array( $ch, $options );

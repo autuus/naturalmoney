@@ -95,7 +95,7 @@ class table
 		// witch user is logged on now.
 		$login = $_SESSION["login"];
 
-		$query = "INSERT INTO log (login, table, call) VALUES ('$login','".
+		$query = "INSERT INTO log (login, sql_change, function) VALUES ('$login','".
 			str_replace("'", "", $table)."','".str_replace("'", "", $call)."')";
 
 		$this->recursion->database->query($query);
