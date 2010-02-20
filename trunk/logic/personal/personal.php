@@ -11,18 +11,19 @@ class personal {
         }
     }
 
-    function logged_in()
+    public function logged_in()
     {
         if ($id = $_SESSION["login"]) {
             $account = $this->recursion->database->account->select("id=$id");
             if ($_SESSION["hash"] == md5($account["username"] . $_SERVER['REMOTE_ADDR'])) {
-                return $account;
+            	$account["password"] = "";
+                return $account["username"];
             }
         }
         return false;
     }
 
-    function create_person($array)
+    public function create_person($array)
     {
         $person = Array();
         $person["name"] = $array["name"]; // check illegal chars
@@ -49,11 +50,12 @@ class personal {
         	);
     }
 
-    function login($username, $password)
+    public function login($username, $password)
     {
         $login = array(
             "password" => md5($password),
             "username" => $username);
+    	echo $username.$password;
         if (!$login = $this->recursion->database->account->select($login)) {
         	throw new Exception("Invalid username or password");
         }
@@ -68,4 +70,5 @@ class personal {
     }
 }
 
+$recursion->personal = new personal($recursion);
 ?>

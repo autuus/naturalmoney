@@ -27,5 +27,6 @@ class database {
     }
 }
 
+$recursion->database = new database($recursion);
 
 ?>

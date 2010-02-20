@@ -1,4 +1,9 @@
 <?php
+
+$_GET["call"] = "personal->login";
+$_POST["args"] = array("droppen","password");
+include("../logic/main.php");
+exit;
 $return = array();
 
 try{

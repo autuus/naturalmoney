@@ -9,7 +9,7 @@ class account{
 		$this->note = new note($recursion);
 	}
 
-	function widraw_money($money){
+	private function widraw_money($money){
 		if ($money < 0.01) {
 			throw new Exception("Invalid amount");
 		}
@@ -22,7 +22,7 @@ class account{
 			"balance=".$this->details["balance"], "id=".$this->details["id"]);
 	}
 
-	function deposit_money($money){
+	private function deposit_money($money){
 		if ($money < 0.01) {
 			throw new Exception("Invalid amount");
 		}
@@ -31,7 +31,7 @@ class account{
 			"balance=".$this->details["balance"], "id=".$this->details["id"]);
 	}
 
-	function pay($money, $to, $note){
+	public function pay($money, $to, $note){
 		if (!$to_account = $this->recursion->database->account->select("id=$to")) {
 			throw new Exception("Account $to does not exist");
 		}
@@ -42,7 +42,7 @@ class account{
 			"balance=".$to_account["balance"], "id=$to");
 	}
 
-	function total_balance(){
+	public function total_balance(){
 
 	}
 }

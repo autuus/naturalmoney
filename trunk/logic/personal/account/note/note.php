@@ -4,7 +4,7 @@ class note{
 		$this->recursion = $recursion;
 	}
 
-	function create($money){
+	public function create($money){
 		$this->recursion->personal->account->widraw_money($money);
 
 		do {
@@ -22,7 +22,7 @@ class note{
 		return $new_note;
 	}
 
-	function delete($id){
+	public function delete($id){
 		if (!$note = $this->recursion->database->note->select("id=$id"))
 		{
 			throw new Exception("Note $id does not exist");
@@ -31,7 +31,7 @@ class note{
 
 	}
 
-	function redeem($barcode){
+	public function redeem($barcode){
 		if (!$note = $this->recursion->database->note->select("barcode=".$barcode)) {
 			// Trace the note.
 			throw new Exception("This note $barcode was not found.");
@@ -40,7 +40,7 @@ class note{
 		$this->delete($note["id"]);
 	}
 
-	function generate_barcode(){
+	private function generate_barcode(){
 		// generate a random 11 digit number
 		$digits = rand(1, 99999999999);
 

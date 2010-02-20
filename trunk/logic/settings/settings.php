@@ -6,3 +6,5 @@ class settings
 	var $mysql_username = "root";
 	var $mysql_password = "";
 }
+
+$recursion->settings = new settings;

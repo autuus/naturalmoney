@@ -7,7 +7,7 @@ class table
 		$this->recursion = $recursion;
 	}
 
-	function select($where = 1){
+	public function select($where = 1){
 		$this->stringify($where);
 
 		$query = "SELECT * FROM ".$this->table." WHERE $where";
@@ -15,7 +15,7 @@ class table
 	}
 
 
-	function insert($values)
+	public function insert($values)
 	{
 		foreach ($values as $key => $value) {
 			$cols .= "$key,";
@@ -30,7 +30,7 @@ class table
 	}
 
 
-	function update($how, $where = 1){
+	public function update($how, $where = 1){
 		$how = $this->stringify($how);
 		$where = $this->stringify($where);
 
@@ -39,7 +39,7 @@ class table
 		return $this->recursion->database->query($query);
 	}
 
-	function delete($where)
+	public function delete($where)
 	{
 		$where = $this->stringify($where);
 
@@ -48,7 +48,7 @@ class table
 		return $this->recursion->database->query($query);
 	}
 
-	function stringify($array)
+	private function stringify($array)
 	{
 		if (gettype($array) == "array") {
 			foreach($array as $key => $value) {
@@ -64,7 +64,7 @@ class table
 	}
 
 
-	function log(){
+	private function log(){
 
 		// We can figure out practically everything worth logging with debug_backtrace
 		$debug_backtrace = debug_backtrace();

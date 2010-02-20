@@ -24,6 +24,7 @@ $recursion->personal->details->country
 $recursion->personal->details->phone
 $recursion->personal->details->birthdate
 $recursion->personal->details->social_security_number
+$recursion->personal->details->password
 $recursion->personal->details->email
 $recursion->personal->details->active
 
