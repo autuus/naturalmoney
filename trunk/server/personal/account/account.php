@@ -13,12 +13,11 @@ class account{
 		if ($money < 0.01) {
 			throw new Exception("Invalid amount");
 		}
-		if ($money > $this->details["money"]) {
+		if ($money > $this->details["balance"]) {
 			throw new Exception("Not enough money");
 		}
-		$this->moneyfilter($money);
 		$this->details["balance"] -= $money;
-		$this->database->account->update(
+		$this->recursion->database->account->update(
 			"balance=".$this->details["balance"], "id=".$this->details["id"]);
 	}
 
@@ -27,19 +26,30 @@ class account{
 			throw new Exception("Invalid amount");
 		}
 		$this->details["balance"] += $money;
-		$this->database->account->update(
+		$this->recursion->database->account->update(
 			"balance=".$this->details["balance"], "id=".$this->details["id"]);
 	}
 
-	public function pay($money, $to, $note){
+	public function get_account_owner($to) {
 		if (!$to_account = $this->recursion->database->account->select("id=$to")) {
-			throw new Exception("Account $to does not exist");
+			throw new Exception("Account does not exist");
 		}
 
+		if (!$to_person = $this->recursion->database->person->select("id=".$to_account["owner"])) {
+			throw new Exception("Person does not exist");
+		}
+		return $to_person["name"];
+	}
+
+	public function pay($money, $to){
+		if (!$to_account = $this->recursion->database->account->select("id=$to")) {
+			throw new Exception("Account does not exist");
+		}
 		$this->widraw_money($money);
 		$to_account["balance"] += $money;
-		$this->database->account->update(
+		$this->recursion->database->account->update(
 			"balance=".$to_account["balance"], "id=$to");
+		return true;
 	}
 
 	public function total_balance(){

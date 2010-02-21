@@ -16,7 +16,7 @@ class personal {
         if ($id = $_SESSION["login"]) {
         	$account = $this->recursion->database->account->select("id=$id");
             if ($_SESSION["hash"] == md5($account["username"] . $_SERVER['REMOTE_ADDR'])) {
-                return $account["username"];
+                return $account;
             }
         }
         return false;
@@ -48,7 +48,9 @@ class personal {
         	throw new Exception("Person was not created");
         }
 
-        $person = $this->recursion->database->person->select($person);
+    	$person = $this->recursion->database->person->select(
+    		"social_security_number='".$person["social_security_number"]."'");
+
         $this->recursion->database->account->insert(
             array("balance" => 0,
                 "owner" => $person["id"],
@@ -77,6 +79,14 @@ class personal {
         $_SESSION["hash"] = md5($login["username"] . $_SERVER['REMOTE_ADDR']);
     	return true;
     }
+
+	public function logout()
+	{
+		if (isset($_COOKIE[session_name()])) {
+			setcookie(session_name(), '', time()-42000, '/');
+		}
+		session_destroy();
+	}
 }
 
 $recursion->personal = new personal($recursion);
