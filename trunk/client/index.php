@@ -17,14 +17,14 @@ try {
     	if ($_GET["action"] == "payment") {
     		if ($_SESSION["validate_payment"]) {
     			$_SESSION["validate_payment"] = false;
-    			if ($recursion->personal->account->pay($_POST["money"], $_POST["account_id"]))
+    			if ($recursion->personal->account->pay(
+    				$_POST["money"], $_POST["account_id"], $_POST["account_owner"], $_POST["comment"]))
     				throw new Exception("maksu hyväksytty");
     		}
     		else
     		{
-    			if ($_POST["account_id"])
+    			if ($_POST)
     			{
-    				$account_owner = $recursion->personal->account->get_account_owner($_POST["account_id"]);
     				$_SESSION["validate_payment"] = true;
     			}
     		}

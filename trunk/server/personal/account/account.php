@@ -30,30 +30,21 @@ class account{
 			"balance=".$this->details["balance"], "id=".$this->details["id"]);
 	}
 
-	public function get_account_owner($to) {
+	public function pay($money, $to, $owner_name, $comment){
 		if (!$to_account = $this->recursion->database->account->select("id=$to")) {
 			throw new Exception("Account does not exist");
 		}
-
-		if (!$to_person = $this->recursion->database->person->select("id=".$to_account["owner"])) {
+		if (!$to_person = $this->recursion->database->person->select("name=".$owner_name)) {
 			throw new Exception("Person does not exist");
 		}
-		return $to_person["name"];
-	}
-
-	public function pay($money, $to){
-		if (!$to_account = $this->recursion->database->account->select("id=$to")) {
-			throw new Exception("Account does not exist");
+		if ($to_person["id"] != $to_account["owner"]) {
+			throw new Exception("Name and account did not match");
 		}
 		$this->widraw_money($money);
 		$to_account["balance"] += $money;
 		$this->recursion->database->account->update(
 			"balance=".$to_account["balance"], "id=$to");
 		return true;
-	}
-
-	public function total_balance(){
-
 	}
 }
 ?>
