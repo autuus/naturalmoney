@@ -36,10 +36,8 @@ $recursion->personal->account->details->last_refresh
 $recursion->personal->account->details->login_ip
 
 $recursion->personal->account->note->create($money)
-$recursion->personal->account->note->cancel($id)
 $recursion->personal->account->note->generate_barcode()
 $recursion->personal->account->note->redeem($barcode)
-$recursion->personal->account->note->print()
 --$recursion->personal->account->lend($how_much, $person)
 --$recursion->personal->account->accept_lend($lend_id)
 $recursion->personal->account->total_balance()
@@ -84,8 +82,8 @@ UNIQUE (`id`)
 CREATE TABLE  `naturalmoney`.`log` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `login` INT ,
-`table` TEXT ,
-`call` TEXT ,
+`sql_change` TEXT ,
+`function` TEXT ,
 `creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM ;
@@ -103,8 +101,17 @@ PRIMARY KEY (  `id` )
 CREATE TABLE  `naturalmoney`.`note` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `account` INT NOT NULL ,
-`barcode` INT NOT NULL ,
+`barcode` INT(12) NOT NULL ,
 `money` DOUBLE ,
 `creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM ;
+
+CREATE TABLE  `naturalmoney`.`accountlog` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`account` INT ,
+`money` DOUBLE ,
+`comment` TEXT ,
+`creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM 

@@ -9,7 +9,7 @@ class note{
 
 		do {
 			$barcode = $this->generate_barcode();
-		} while ($this->recursion->database->note->select("barcode=$barcode"));
+		} while ($this->recursion->database->note->select("barcode='$barcode'"));
 
 		$note = array(
 			"account" => $this->recursion->personal->account->details["id"],
@@ -17,36 +17,26 @@ class note{
 			"money" => $money
 		);
 		$this->recursion->database->note->insert($note);
+		$new_note = $this->recursion->database->note->select($note);
 
-		$new_note = $this->recursion->database->note->select("barcode=$barcode");
 		return $new_note;
 	}
 
-	public function delete($id){
-		if (!$note = $this->recursion->database->note->select("id=$id"))
-		{
-			throw new Exception("Note $id does not exist");
-		}
-		$this->recursion->database->note->delete("id=$id");
-
-	}
-
-	public function redeem($barcode){
+	function redeem($barcode){
 		if (!$note = $this->recursion->database->note->select("barcode=".$barcode)) {
 			// Trace the note.
 			throw new Exception("This note $barcode was not found.");
 		}
+		$this->recursion->database->accountlog->insert(
+			array("money"=>"-$money", "comment"=>$comment, "account"=>"$account_id"));
 		$this->recursion->personal->account->deposit_money($note["money"]);
-		$this->delete($note["id"]);
+		$this->recursion->database->note->delete("id=".$note["id"]);
 	}
 
-	private function generate_barcode(){
+	function generate_barcode(){
 		// generate a random 11 digit number
-		$digits = rand(1, 99999999999);
-
-		// add zeros to missing digits
 		while (strlen($digits) < 11) {
-			$digits = "0".$digits;
+			$digits = $digits.rand(0,9);
 		}
 
 		// Calculation of the check digit
@@ -60,9 +50,17 @@ class note{
 		// calculating modulo ten (58 mod 10 = 8)
 		$X = substr($X, -1); // only the last digit of the number
 		// subtracting from ten (10 - 8 = 2).
-		$X = 10 - $X;
+		if ($X != 0) {
+			$X = 10 - $X;
+		}
 
-		$digits = $digits.$X;
+		return $digits.$X;
+	}
+
+	function get_notes()
+	{
+		return $this->recursion->database->note->select_all(
+			"account=".$this->recursion->personal->account->details["id"]);
 	}
 }
 ?>

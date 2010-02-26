@@ -11,7 +11,20 @@ class table
 		$where = $this->stringify($where, true);
 
 		$query = "SELECT * FROM ".$this->table." WHERE $where";
+	//echo $query;
 		return mysql_fetch_assoc($this->recursion->database->query($query));
+	}
+
+	public function select_all($where = 1){
+		$where = $this->stringify($where, true);
+
+		$query = "SELECT * FROM ".$this->table." WHERE $where";
+		$result = $this->recursion->database->query($query);
+
+		while($assoc = mysql_fetch_assoc($result)) {
+			$return[] = $assoc;
+		}
+		return $return;
 	}
 
 

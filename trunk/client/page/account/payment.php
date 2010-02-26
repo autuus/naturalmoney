@@ -1,23 +1,23 @@
 <?php
-if ($account_owner) {
 extract($_POST);
+if ($_POST && $_SESSION["validate_payment"]) {
 ?>
 <form method="POST" action="?action=payment">
 <table>
 <tr>
-	<td>tilinumero</td>
+	<td>Tilinumero</td>
 	<td bgcolor="#eeeeee">
 		<?php echo $account_id ?>
 	</td>
 </tr>
 <tr>
-	<td>saajan nimi</td>
+	<td>Saajan nimi</td>
 	<td bgcolor="#eeeeee">
-		<?php echo $owner_name ?>
+		<?php echo $account_owner ?>
 	</td>
 </tr>
 <tr>
-	<td>viesti</td>
+	<td>Viesti</td>
 	<td bgcolor="#eeeeee">
 		<?php echo $comment ?>
 	</td>
@@ -27,7 +27,7 @@ extract($_POST);
 	<td bgcolor="#eeeeee"></td>
 </tr>
 <tr>
-	<td>summa</td>
+	<td>Summa</td>
 	<td bgcolor="#eeeeee">
 		<?php echo $money ?>
 	</td>
@@ -37,10 +37,11 @@ extract($_POST);
 	</td>
 	<td bgcolor="#eeeeee">
 		<input type="hidden" name="account_id" value="<?php echo $account_id ?>">
-		<input type="hidden" name="owner_name" value="<?php echo $account_id ?>">
+		<input type="hidden" name="account_owner" value="<?php echo $account_owner ?>">
 		<input type="hidden" name="comment" value="<?php echo $comment ?>">
 		<input type="hidden" name="money" value="<?php echo $money ?>">
-		<input type="submit" value="maksa">
+		<input type="hidden" name="permission" value="true">
+		<input type="submit" value="Maksa">
 	</td>
 </tr>
 </table>
@@ -50,12 +51,12 @@ extract($_POST);
 ?>
 <form method="POST" action="?action=payment">
 <table>
-<tr><td>tilinumero</td><td><input type="text" name="account_id"></td></tr>
-<tr><td>saajan nimi</td><td><input type="text" name="owner_name"></td></tr>
-<tr><td>viesti</td><td><textarea name="comment"></textarea></td></tr>
+<tr><td>Tilinumero</td><td><input type="text" name="account_id" value="<?php echo $account_id ?>"></td></tr>
+<tr><td>Saajan nimi</td><td><input type="text" name="account_owner" value="<?php echo $account_owner ?>"></td></tr>
+<tr><td>Viesti</td><td><textarea name="comment"><?php echo $comment ?></textarea></td></tr>
 <tr><td>&nbsp;</td></tr>
-<tr><td>summa</td><td><input type="text" name="money"></td></tr>
-<tr><td></td><td><input type="submit" value="seuraava"</td></tr>
+<tr><td>Summa</td><td><input type="text" name="money" value="<?php echo $money ?>"></td></tr>
+<tr><td></td><td><input type="submit" value="Seuraava"</td></tr>
 </table>
 </form>
 <?php
