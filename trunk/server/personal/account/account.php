@@ -6,7 +6,7 @@ class account{
 		$this->recursion = $recursion;
 		$this->details = $account;
 		include("note/note.php");
-		$this->note = new note($recursion);
+		$this->note = new note($recursion, $account["id"]);
 	}
 
 	function widraw_money($money){

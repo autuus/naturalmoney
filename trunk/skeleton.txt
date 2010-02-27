@@ -115,3 +115,6 @@ CREATE TABLE  `naturalmoney`.`accountlog` (
 `creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM 
+
+INSERT INTO `person` (id, name, address, country, birthdate, social_security_number, email) VALUES (1, 'Hallitus', '', 'Suomi', '2010-03-01', 'NONE', 'rahauudistus@gmail.com')
+INSERT INTO account (id, balance, username, password) VALUES (1, 0, 'Hallitus', 'Vea!i76QfN=cn?')

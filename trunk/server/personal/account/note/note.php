@@ -1,18 +1,22 @@
 <?php
 class note{
-	function __construct($recursion){
+	function __construct($recursion, $account_id){
 		$this->recursion = $recursion;
+		$this->account_id = $account_id;
 	}
 
 	public function create($money){
 		$this->recursion->personal->account->widraw_money($money);
+
+		$this->recursion->database->accountlog->insert(
+			array("money"=>"-$money", "comment"=>"Käteis nosto", "account"=>$this->account_id));
 
 		do {
 			$barcode = $this->generate_barcode();
 		} while ($this->recursion->database->note->select("barcode='$barcode'"));
 
 		$note = array(
-			"account" => $this->recursion->personal->account->details["id"],
+			"account" => $this->account_id,
 			"barcode" => $barcode,
 			"money" => $money
 		);
@@ -23,12 +27,12 @@ class note{
 	}
 
 	function redeem($barcode){
-		if (!$note = $this->recursion->database->note->select("barcode=".$barcode)) {
+		if (!$note = $this->recursion->database->note->select("barcode='".$barcode."'")) {
 			// Trace the note.
-			throw new Exception("This note $barcode was not found.");
+			throw new Exception("Viivakoodi ei kelpaa.");
 		}
 		$this->recursion->database->accountlog->insert(
-			array("money"=>"-$money", "comment"=>$comment, "account"=>"$account_id"));
+			array("money"=>"+".$note["money"], "comment"=>"Rahan talletus", "account"=>$this->account_id));
 		$this->recursion->personal->account->deposit_money($note["money"]);
 		$this->recursion->database->note->delete("id=".$note["id"]);
 	}
@@ -60,7 +64,7 @@ class note{
 	function get_notes()
 	{
 		return $this->recursion->database->note->select_all(
-			"account=".$this->recursion->personal->account->details["id"]);
+			"account=".$this->account_id);
 	}
 }
 ?>
