@@ -116,13 +116,13 @@ $fontsize = 300;
 $amount = $amount;
 $string = $date." ".$barcode;
 imagefttext($image, $fontsize, 0, $size / 2 - ($fontsize / 2) * strlen($amount), $size / 4 + $fontsize / 2, $black,
-	"data/arial.ttf", $amount);
+	"page/shownote/arial.ttf", $amount);
 // amount
 imagefttext($image, $fontsize, 0, ($size / 2 - ($fontsize / 2) * strlen($amount)) - 20, $size / 4 + $fontsize / 2 - 20, $white,
-	"data/arial.ttf", $amount);
+	"page/shownote/arial.ttf", $amount);
 // date
 imagefttext($image, 50, 0, 100, 580, $black,
-	"data/arial.ttf", $string);
+	"page/shownote/arial.ttf", $string);
 
 
 

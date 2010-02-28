@@ -88,15 +88,6 @@ CREATE TABLE  `naturalmoney`.`log` (
 PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM ;
 
-// this will not be used
-CREATE TABLE  `naturalmoney`.`lend` (
-`id` INT NOT NULL DEFAULT  `1`,
-`to` INT ,
-`from` INT ,
-`money` DOUBLE ,
-`creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
-PRIMARY KEY (  `id` )
-) ENGINE = MYISAM ;
 
 CREATE TABLE  `naturalmoney`.`note` (
 `id` INT NOT NULL AUTO_INCREMENT ,
