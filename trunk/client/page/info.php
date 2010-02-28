@@ -13,9 +13,12 @@ j&auml;rjestelm&auml;n Sin&auml; haluat.<br>
 <br>
 Rahaj&auml;rjestelm&auml; toimii seuraavilla s&auml;&auml;nn&ouml;ill&auml;:<br>
 1. Koron pyyt&auml;minen lainasta on ehdottomasti kielletty&auml;<br>
-2. Verotus hoidetaan siirt&auml;m&auml;ll&auml; joka kuukausi kaikesta rahasta 4% valtion kassaan.<br>
+2. Verotus hoidetaan siirt&auml;m&auml;ll&auml; joka kuukausi kaikesta rahasta 4% valtion kassaan,
+t&auml;ll&auml; tavalla saamme rahan virtaamaan paremmin, eik&auml; rahapatoutumia synny niin
+helposti.<br>
 3. Pankit eiv&auml;t saa sijoittaa eik&auml; tuottaa voittoa talletetuilla rahoilla,
-he voivat lainata sit&auml; ilman korkoa luotettaville helkil&ouml;ille ja yrityksille.<br>
+he voivat lainata sit&auml; ilman korkoa luotettaville helkil&ouml;ille ja yrityksille. T&auml;ll&auml; tavoin
+saamme rahan luomisen tyhj&auml;st&auml; kuriin.<br>
 4. Pankit voivat ottaa palvelumaksua ainoastaan rahan tallettajalta, ei lainaajalta.<br>
 5. Yhteenlaskettu raham&auml;&auml;r&auml; ja kaikki valtion rahaliikenne on t&auml;ysin julkista.<br>
 6. Uutta rahaa ei paineta sen j&auml;lkeen kun tarpeeksi rahaa on liikenteess&auml; joten
@@ -29,10 +32,9 @@ pankkitiliins&auml;, ja tallettaa rahat.<br>
 <br>
 Eduskunta<br>
 <br>
-T&auml;m&auml;n systeemin tarkoituksena on rahoittaa Marko Sihvosen karavaania
-ja luoda siitt&auml; uusi kansanedustus. Joten jokainen joka k&auml;ytt&auml;&auml;
+Jokainen joka k&auml;ytt&auml;&auml;
 euroja, maksaa veroa suomen korruptuneelle hallitukselle, mutta jokainen joka
-k&auml;ytt&auml;&auml; meid&auml;n rahaj&auml;rjestelm&auml;&auml; maksaa veroja
+k&auml;ytt&auml;&auml; t&auml;t&auml; kansanvaltaista rahaj&auml;rjestelm&auml;&auml; maksaa veroja
 uuden hallituksen pystytt&auml;miselle.
 </p>
 </div>

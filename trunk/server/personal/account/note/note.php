@@ -9,7 +9,7 @@ class note{
 		$this->recursion->personal->account->widraw_money($money);
 
 		$this->recursion->database->accountlog->insert(
-			array("money"=>"-$money", "comment"=>"Käteis nosto", "account"=>$this->account_id));
+			array("money"=>"- $money", "comment"=>"Käteis nosto", "account"=>$this->account_id));
 
 		do {
 			$barcode = $this->generate_barcode();
@@ -32,7 +32,7 @@ class note{
 			throw new Exception("Viivakoodi ei kelpaa.");
 		}
 		$this->recursion->database->accountlog->insert(
-			array("money"=>"+".$note["money"], "comment"=>"Rahan talletus", "account"=>$this->account_id));
+			array("money"=>"+ ".$note["money"], "comment"=>"Rahan talletus", "account"=>$this->account_id));
 		$this->recursion->personal->account->deposit_money($note["money"]);
 		$this->recursion->database->note->delete("id=".$note["id"]);
 	}

@@ -1,3 +1,5 @@
+<a href="?page=info">K&auml;ytt&ouml;ehdot</a>
+<br><br>
 <form method=POST action="?action=register">
 <table>
 <tr><td>nimi</td><td><input type="text" name="args[name]"></td></tr>
@@ -9,7 +11,7 @@
 <tr><td>k&auml;ytt&auml;j&auml;nimi</td><td><input type="text" value="" name="args[username]"></td></tr>
 <tr><td>salasana</td><td><input type="password" value="" name="args[password]"></td></tr>
 </table>
-<input type="submit" value="valmis!">
+<input type="submit" value="Olen lukenut k&auml;ytt&ouml;ehdot, ja hyv&auml;ksyn ne">
 </form>
 
 <!--

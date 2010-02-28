@@ -59,6 +59,8 @@ try {
     }else {
     	if ($_GET["page"] == "info")
     		$page = "info";
+    	if ($_GET["page"] == "public")
+    		$page = "public";
 
     	if ($_GET["page"] == "register") {
     		if ($_POST["args"]) {
@@ -87,6 +89,7 @@ A:hover {text-decoration: none; color: orange;}
 table {border-width: 0px; border-spacing: 0; }
 </style>
 <div align="center" style="position: absolute; left: 10%;top: 10%; width: 80%">
+<font size=-1>Rahaj&auml;rjestelm&auml; on toistaiseksi testik&auml;yt&ouml;ss&auml;</font><br>
 <font color="red"><?php echo $error; ?></font><br>
 <?php include("page/$page.php"); ?>
 </div>

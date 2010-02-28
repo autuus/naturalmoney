@@ -4,9 +4,9 @@ include("table/table.php");
 class database {
     function __construct($recursion)
     {
-        $this->connection = mysql_connect($recursion->settings->mysql_host,
-        	$recursion->settings->mysql_username, $recursion->settings->mysql_password);
-    	$database = $recursion->settings->mysql_database;
+        $this->connection = mysql_connect($recursion->mysql_host,
+        	$recursion->mysql_username, $recursion->mysql_password);
+    	$database = $recursion->mysql_database;
         mysql_select_db($database, $this->connection);
 
     	$result = $this->query("SHOW TABLES FROM $database");

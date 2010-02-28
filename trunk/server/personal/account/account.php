@@ -58,9 +58,9 @@ class account{
 		$to_account["balance"] += $money;
 
 		$this->recursion->database->accountlog->insert(
-			array("money"=>"+$money", "comment"=>$comment, "account"=>$this->details["id"]));
+			array("money"=>"- $money", "comment"=>$comment, "account"=>$this->details["id"]));
 		$this->recursion->database->accountlog->insert(
-			array("money"=>"-$money", "comment"=>$comment, "account"=>"$account_id"));
+			array("money"=>"+ $money", "comment"=>$comment, "account"=>"$account_id"));
 
 		$this->recursion->database->account->update(
 			"balance=".$to_account["balance"], "id=$account_id");
