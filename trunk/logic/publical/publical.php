@@ -5,6 +5,11 @@ class publical {
         $this->recursion = $recursion;
     }
 
+	function count_users()
+	{
+		return count($this->recursion->database->account->select_all());
+	}
+
     function money_in_circulation()
     {
         $account = $this->recursion->database->account->select_all();

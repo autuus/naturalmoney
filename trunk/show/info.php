@@ -36,5 +36,11 @@ Jokainen joka k&auml;ytt&auml;&auml;
 euroja, maksaa veroa suomen korruptuneelle hallitukselle, mutta jokainen joka
 k&auml;ytt&auml;&auml; t&auml;t&auml; kansanvaltaista rahaj&auml;rjestelm&auml;&auml; maksaa veroja
 uuden hallituksen pystytt&auml;miselle.
-</p>
+<br>
+<br>
+<a href="http://www.naturalmoney.org/introduction.html">NaturalMoney.org</a><br><br>
+Rahaj&auml;rjestelm&auml; on saanut vaikutteensa v&auml;h&auml;n tunnetusta
+natural money j&auml;rjestelm&auml;st&auml;.
+<p>
+<br><br>
 </div>

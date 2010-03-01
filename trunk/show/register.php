@@ -1,4 +1,4 @@
-<a href="?page=info">K&auml;ytt&ouml;ehdot</a>
+<a href="?action=info">K&auml;ytt&ouml;ehdot</a>
 <br><br>
 <form method=POST action="?action=register">
 <table>

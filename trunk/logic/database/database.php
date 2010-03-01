@@ -12,7 +12,7 @@ class database {
     	$result = $this->query("SHOW TABLES FROM $database");
     	while($table = mysql_fetch_assoc($result))
     	{
-    		$table = $table["Tables_in_naturalmoney"];
+    		$table = $table["Tables_in_".$recursion->mysql_database];
     		$this->$table = new table($recursion, $table);
     	}
     }

@@ -1,3 +1,5 @@
+// out of date
+
 $recursion->mysql_username
 $recursion->mysql_password
 $recursion->mysql_host
@@ -12,7 +14,7 @@ $recursion->database->$table->insert($array)
 $recursion->database->$table->log()
 
 
-$recursion->personal->create_person($array)
+$recursion->personal->register($array)
 .$recursion->personal->validate($person)
 $recursion->personal->login($username, $password)
 $recursion->personal->logged_in()
@@ -52,7 +54,7 @@ $recursion->publical->money->exchange
 $recursion->publical->money->exchange($euros, $to_whom)
 $recursion->publical->show_availible_lendings()
 
-CREATE TABLE  `naturalmoney`.`person` (
+CREATE TABLE  `rahauudistus`.`person` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 `name` TEXT NOT NULL ,
@@ -62,12 +64,11 @@ CREATE TABLE  `naturalmoney`.`person` (
 `birthdate` DATE NOT NULL ,
 `social_security_number` TEXT NOT NULL ,
 `email` TEXT NOT NULL ,
-`active` BOOL DEFAULT NULL,
 PRIMARY KEY (  `id` )
-) ENGINE = MYISAM 
+) ENGINE = MYISAM;
 
 
-CREATE TABLE  `naturalmoney`.`account` (
+CREATE TABLE  `rahauudistus`.`account` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `balance` DOUBLE NOT NULL DEFAULT  '0',
 `owner` INT NOT NULL ,
@@ -77,9 +78,9 @@ CREATE TABLE  `naturalmoney`.`account` (
 `password` TEXT NOT NULL ,
 `active` BOOL DEFAULT NULL ,
 UNIQUE (`id`)
-) ENGINE = MYISAM 
+) ENGINE = MYISAM;
 
-CREATE TABLE  `naturalmoney`.`log` (
+CREATE TABLE  `rahauudistus`.`log` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `login` INT ,
 `sql_change` TEXT ,
@@ -89,7 +90,7 @@ PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM ;
 
 
-CREATE TABLE  `naturalmoney`.`note` (
+CREATE TABLE  `rahauudistus`.`note` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `account` INT NOT NULL ,
 `barcode` INT(12) NOT NULL ,
@@ -98,14 +99,14 @@ CREATE TABLE  `naturalmoney`.`note` (
 PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM ;
 
-CREATE TABLE  `naturalmoney`.`accountlog` (
+CREATE TABLE  `rahauudistus`.`accountlog` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `account` INT ,
 `money` DOUBLE ,
 `comment` TEXT ,
 `creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (  `id` )
-) ENGINE = MYISAM 
+) ENGINE = MYISAM;
 
 INSERT INTO `person` (id, name, address, country, birthdate, social_security_number, email) VALUES (1, 'Hallitus', '', 'Suomi', '2010-03-01', 'NONE', 'rahauudistus@gmail.com')
 INSERT INTO account (id, owner, balance, username, password, active) VALUES (1, 1, 200, 'Hallitus',  '0f4659dca17b209a4f898a1b9edaba91', 1)

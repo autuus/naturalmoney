@@ -32,7 +32,7 @@ class table
 	{
 		foreach ($values as $key => $value) {
 			$cols .= "$key,";
-			$vals .= "'$value',";
+			$vals .= "'".htmlentities($value, ENT_QUOTES)."',";
 		}
 		$cols = substr($cols, 0, - 1);
 		$vals = substr($vals, 0, - 1);
@@ -67,14 +67,14 @@ class table
 			$chars_to_delete = 1;
 			foreach($array as $key => $value) {
 				if ($value == "NOW()")
-					$line .= "$key = $value,";
+					$line .= "$key = NOW(),";
 				if ($and)
 				{
-					$line .= "$key = '$value' AND ";
+					$line .= "$key = '".htmlentities($value, ENT_QUOTES)."' AND ";
 					$chars_to_delete = 4;
 				}
 				else
-					$line .= "$key = '$value',";
+					$line .= "$key = '".htmlentities($value, ENT_QUOTES)."',";
 			}
 			// delete the last , or AND
 			return substr($line, 0, - $chars_to_delete);
