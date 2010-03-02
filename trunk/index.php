@@ -57,6 +57,17 @@ try {
     	if ($_GET["action"] == "shownote") {
     		include("show/account/shownote.php");
     	}
+
+    	$from_date = $_GET["from_date"];
+    	$to_date = $_GET["to_date"];
+
+    	if (!$from_date) {
+    		$from_date = date("Y-m-d");
+    	}
+    	if (!$to_date) {
+    		// to last month
+    		$to_date = date("Y-m-d", mktime(0, 0, 0, date("m")-1, date("d"), date("Y")));
+    	}
     }else {
     	if ($_GET["action"] == "info")
     		$page = "info";

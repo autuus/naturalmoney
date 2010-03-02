@@ -2,14 +2,13 @@
 
 ?>
 <div align="left">
-<p>Pelis&auml;&auml;nn&ouml;t</p>
+<p><b>Pelis&auml;&auml;nn&ouml;t</b></p>
 <p>
-T&auml;m&ouml;n rahaj&auml;rjestelm&auml;n projekti tarkoitus on syrj&auml;ytt&auml;&auml;
-nykyinen FIAT valuutalla toimiva rahaj&auml;rjestelm&auml;, ja palauttaa rahan valta
-yksityislt&auml; pankeilta suomen kansalle, ja siirty&auml; kansalaisuus palkka
-aatteella toimivaan rahaj&auml;rjestelm&auml;&auml;n.
-Min&auml; tarjoan ty&ouml;kalua vaikuttamaan siihen, ett&auml; millaisen yhteiskunta
-j&auml;rjestelm&auml;n Sin&auml; haluat.<br>
+T‰mˆn rahaj‰rjestelm‰n projekti tarkoitus on syrj‰ytt‰‰ nykyinen FIAT valuutalla
+toimiva harah‰rjestelm‰, ja palauttaa rahan valta yksityislt‰ pankeilta suomen
+kansalle, ja siitry‰ kansalaisuus palkka aatteella toimivaan rahaj‰rjestelm‰‰n.
+Min‰ tarjoan tyˆkalua vaikuttamaan siihen, ett‰ millaisen yhteiskunta j‰rjestelm‰n
+Sin‰ haluat.<br>
 <br>
 Rahaj&auml;rjestelm&auml; toimii seuraavilla s&auml;&auml;nn&ouml;ill&auml;:<br>
 1. Koron pyyt&auml;minen lainasta on ehdottomasti kielletty&auml;<br>
@@ -24,25 +23,25 @@ saamme rahan luomisen tyhj&auml;st&auml; kuriin.<br>
 6. Uutta rahaa ei paineta sen j&auml;lkeen kun tarpeeksi rahaa on liikenteess&auml; joten
 t&auml;m&auml; "piilotettu vero" eli inflaatio pidet&auml;&auml;n kurissa.<br>
 <br>
-K&auml;teinen raha toimii niin, ett&auml; kirjoitat halutun summan ett&auml; paljonko
-haluat nostaa, sen j&auml;lkeen ohjelma tekee sinulle setelin, jossa on 12 numeronen
-koodi. T&auml;m&auml;n koodin voi sin&auml; tai joku muu sy&ouml;tt&auml;&auml; omaan
-pankkitiliins&auml;, ja tallettaa rahat.<br>
+K‰teinen raha toimii niin, ett‰ kirjoitat halutun summan ett‰ paljonko haluat
+nostaa, sen j‰lkeen ohjelma tekee sinulle setelin, jossa on 12 numeronen koodi.
+T‰m‰n koodin voi sin‰ tai joku muu syˆtt‰‰ omaan pankkitiliins‰, ja tallettaa
+rahat.<br>
 <br>
 <br>
-Eduskunta<br>
+<b>Eduskunta</b><br>
 <br>
-Eduskuntaan valitaan vain puhdas syd&auml;mmisi&auml; ihmisi&auml;, joita kiinnostaa
-t&auml;m&auml;n maan tulevaisuus.
-Jokainen joka k&auml;ytt&auml;&auml;
-euroja, maksaa veroa suomen korruptuneelle hallitukselle, mutta jokainen joka
-k&auml;ytt&auml;&auml; t&auml;t&auml; kansanvaltaista rahaj&auml;rjestelm&auml;&auml; maksaa veroja
-uuden hallituksen pystytt&auml;miselle.
+Jokainen joka k‰ytt‰‰ euroja, maksaa veroa Suomen korruptuneelle hallitukselle,
+mutta jokainen joka k‰ytt‰‰ t‰t‰ kansanvaltaista rahaj‰rjestelm‰‰ maksaa veroja
+uuden hallituksen pystytt‰miselle. Eduskuntaan valitaan viisaimmat ihmiset joita
+kiinnostaa t‰m‰n maan tulevaisuus, ja t‰rke‰t‰ on, ettei eduskunnassa ole yht‰k‰‰n
+omaa taloudellista etua tavoittelevaa ihmist‰.
 <br>
 <br>
-<a href="http://www.naturalmoney.org/introduction.html">NaturalMoney.org</a><br><br>
-Rahaj&auml;rjestelm&auml; on saanut vaikutteensa v&auml;h&auml;n tunnetusta
-natural money j&auml;rjestelm&auml;st&auml;.
-<p>
+Rahaj‰rjestelm‰ on saanut vaikutteita
+<a href="http://www.naturalmoney.org/introduction.html">NaturalMoney.org</a>
+-j&auml;rjestelm&auml;st&auml;<br>
+Koodannut Konsta Gogoljuk, 0415370389 droppenk(&auml;t)gmail.com
+<br>
 <br><br>
 </div>

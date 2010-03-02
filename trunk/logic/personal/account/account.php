@@ -63,21 +63,48 @@ class account{
 
 
 
-	function show_log($arg1 = false, $arg2 = false){
-		if (!$arg1 && !$arg2) {
+	function show_log($id = false){
+		if (!$id) {
 			$log = $this->recursion->database->accountlog->select_all(
-				"account=".$this->details["id"]." ORDER BY creation DESC");
+					"account=".$this->details["id"]." ORDER BY creation DESC");
 		}
-		if ($arg1) {
-			$log = $this->recursion->database->accountlog->select(
-				"id=$arg1 AND account=".$this->details["id"]."");
+		else {
+		$log = $this->recursion->database->accountlog->select(
+				"id=$id AND account=".$this->details["id"]);
 		}
-		/*
-		if (arg1 && arg2){
-		   $log = $this->recursion->database->accountlog
-		*/
-
 		return $log;
+	}
+
+	function show_log_by_date($from = false, $to = false){
+		// explode and count the numbers to see if the syntax is correct
+		if (count($from = explode("-",$from)) == 3) {
+			if (!is_numeric($from[2]) || !is_numeric($from[1]) || !is_numeric($from[0])) {
+				$from = time();
+			}
+			else
+				$from = mktime(23, 59, 59, $from[1], $from[2], $from[0]);
+		}
+		else {
+			$from = time();
+		}
+
+		if (count($to = explode("-",$to)) == 3) {
+			if (!is_numeric($to[2]) || !is_numeric($to[1]) || !is_numeric($to[0])) {
+				$to = mktime(0, 0, 0, date("m")-1, date("d"),   date("Y"));
+			}
+			else
+				$to = mktime(0, 0, 0, $to[1], $to[2], $to[0]);
+		}
+		else {
+			$to = mktime(0, 0, 0, date("m")-1, date("d"),   date("Y"));
+		}
+
+		if ($to > $from) {
+			$select = "account=".$this->details["id"]." AND creation > FROM_UNIXTIME($from) AND creation < FROM_UNIXTIME($to) ORDER BY creation DESC";
+		}
+		else
+	    	$select = "account=".$this->details["id"]." AND creation < FROM_UNIXTIME($from) AND creation > FROM_UNIXTIME($to) ORDER BY creation DESC";
+		return $this->recursion->database->accountlog->select_all($select);
 	}
 }
 ?>
