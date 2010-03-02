@@ -13,8 +13,8 @@ class personal {
 
     public function logged_in()
     {
-        if ($id = $_SESSION["login"]) {
-        	$account = $this->recursion->database->account->select("id=$id");
+    	if (isset($_SESSION["login"])) {
+        	$account = $this->recursion->database->account->select("id=".$_SESSION["login"]);
             if ($_SESSION["hash"] == md5($account["username"] . $_SERVER['REMOTE_ADDR'])) {
                 return $account;
             }

@@ -5,8 +5,8 @@
 <p>Pelis&auml;&auml;nn&ouml;t</p>
 <p>
 T&auml;m&ouml;n rahaj&auml;rjestelm&auml;n projekti tarkoitus on syrj&auml;ytt&auml;&auml;
-nykyinen FIAT valuutalla toimiva harah&auml;rjestelm&auml;, ja palauttaa rahan valta
-yksityislt&auml; pankeilta suomen kansalle, ja siitry&auml; kansalaisuus palkka
+nykyinen FIAT valuutalla toimiva rahaj&auml;rjestelm&auml;, ja palauttaa rahan valta
+yksityislt&auml; pankeilta suomen kansalle, ja siirty&auml; kansalaisuus palkka
 aatteella toimivaan rahaj&auml;rjestelm&auml;&auml;n.
 Min&auml; tarjoan ty&ouml;kalua vaikuttamaan siihen, ett&auml; millaisen yhteiskunta
 j&auml;rjestelm&auml;n Sin&auml; haluat.<br>
@@ -32,6 +32,8 @@ pankkitiliins&auml;, ja tallettaa rahat.<br>
 <br>
 Eduskunta<br>
 <br>
+Eduskuntaan valitaan vain puhdas syd&auml;mmisi&auml; ihmisi&auml;, joita kiinnostaa
+t&auml;m&auml;n maan tulevaisuus.
 Jokainen joka k&auml;ytt&auml;&auml;
 euroja, maksaa veroa suomen korruptuneelle hallitukselle, mutta jokainen joka
 k&auml;ytt&auml;&auml; t&auml;t&auml; kansanvaltaista rahaj&auml;rjestelm&auml;&auml; maksaa veroja
