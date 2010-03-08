@@ -26,19 +26,19 @@ class account{
 
 	function validate_payment($account_id, $account_owner){
 		if (!$account_id) {
-			throw new Exception("Syötä tilinumero");
+			throw new Exception("SyÙtÙ† tilinumero");
 		}
 		if (!$account_owner) {
-			throw new Exception("Syötä saajan nimi");
+			throw new Exception("SyÙtÙ† saajan nimi");
 		}
 		if (!$to_account = $this->recursion->database->account->select("id=$account_id")) {
-			throw new Exception("Käyttäjä tiliä ei löytynyt");
+			throw new Exception("KÙ†yttÙ†jÙ† tiliÙ† ei lÙytynyt");
 		}
 		if (!$to_person = $this->recursion->database->person->select("name='$account_owner'")) {
-			throw new Exception("Henkilöä ei löytynyt");
+			throw new Exception("HenkilÙÙ† ei lÙytynyt");
 		}
 		if ($to_person["id"] != $to_account["owner"]) {
-			throw new Exception("Tili ja henkilö ei täsmää");
+			throw new Exception("Tili ja henkilÙ ei tÙ†smÙ†Ù†");
 		}
 		return true;
 	}
@@ -60,7 +60,6 @@ class account{
 			"balance=".$to_account["balance"], "id=$account_id");
 		return true;
 	}
-
 
 
 	function show_log($id = false){

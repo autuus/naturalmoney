@@ -11,7 +11,7 @@ class personal {
         }
     }
 
-    public function logged_in()
+    function logged_in()
     {
     	if (isset($_SESSION["login"])) {
         	$account = $this->recursion->database->account->select("id=".$_SESSION["login"]);
@@ -22,45 +22,6 @@ class personal {
         return false;
     }
 
-    public function register($array)
-    {
-    	if ($person = $this->recursion->database->account->select(
-    	"username='".$array["username"]."'")) {
-    		throw new Exception("Käyttäjänimi on jo käytössä");
-    	}
-    	if ($person = $this->recursion->database->person->select(
-    	"social_security_number='".$array["social_security_number"]."'")) {
-    		throw new Exception("Sosiaaliturvatunnus on jo käytössä");
-    	}
-
-        $person = Array();
-        $person["name"] = $array["name"];
-        $person["address"] = $array["address"];
-        $person["country"] = $array["country"];
-        $person["birthdate"] = $array["birthdate"];
-    	$person["social_security_number"] = $array["social_security_number"];
-    	$person["email"] = $array["email"];
-
-        $account["username"] = $array["username"];
-        $account["password"] = md5($array["password"]);
-
-        if (!$this->recursion->database->person->insert($person)) {
-        	throw new Exception("Henkilöä ei luotu");
-        }
-
-    	$person = $this->recursion->database->person->select(
-    		"social_security_number='".$person["social_security_number"]."'");
-
-        $this->recursion->database->account->insert(
-            array("balance" => 200,
-                "owner" => $person["id"],
-                "username" => $account["username"],
-                "password" => $account["password"],
-                "active" => 1)
-        );
-    	return true;
-    }
-
     public function login($username, $password = "")
     {
         $login = array(
@@ -68,10 +29,10 @@ class personal {
             "username" => $username);
 
         if (!$login = $this->recursion->database->account->select($login)) {
-        	throw new Exception("Väärä käyttäjätunnus tai salasana");
+        	throw new Exception("VÙ†Ù†rÙ† kÙ†yttÙ†jÙ†tunnus tai salasana");
         }
     	if (!$login["active"]) {
-    		throw new Exception("Käyttäjätunnustasi ei ole aktivoitu vielä");
+    		throw new Exception("KÙ†yttÙ†jÙ†tunnustasi ei ole aktivoitu vielÙ†");
     	}
 
 		$this->recursion->database->account->update(

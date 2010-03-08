@@ -61,9 +61,8 @@ CREATE TABLE  `rahauudistus`.`person` (
 `address` TEXT NOT NULL ,
 `country` TEXT NOT NULL ,
 `phone` TEXT NOT NULL ,
-`birthdate` DATE NOT NULL ,
 `social_security_number` TEXT NOT NULL ,
-`email` TEXT NOT NULL ,
+`full_member` INT(1) DEFAULT '0' ,
 PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM;
 
@@ -71,12 +70,12 @@ PRIMARY KEY (  `id` )
 CREATE TABLE  `rahauudistus`.`account` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `balance` DOUBLE NOT NULL DEFAULT  '0',
-`owner` INT NOT NULL ,
-`login_ip` TEXT NOT NULL ,
-`last_refresh` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`person` INT NOT NULL DEFAULT '0',
+`email` TEXT NOT NULL ,
 `username` TEXT NOT NULL ,
 `password` TEXT NOT NULL ,
-`active` BOOL DEFAULT NULL ,
+`session` TEXT ,
+`last_refresh` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 UNIQUE (`id`)
 ) ENGINE = MYISAM;
 

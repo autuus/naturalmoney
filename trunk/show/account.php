@@ -27,7 +27,8 @@ if ($_GET["action"] == "tax") {
 <a href="?action=public">Tarkastele yleisi&auml; tilastoja</a></a><br><br>
 <font size=-1 color="gray">Kirjautuneena <br></font><font size=-1>
 <?php echo $recursion->personal->details["name"]; ?><br></font>
-<a href="?action=logout"><< Kirjaudu ulos</a></a><br>
+<a href="?action=logout"><< Kirjaudu ulos</a></a><br><br>
+<a href="/forum">Forum</a><br>
 </td><td valign="top" width="500px">
 <?php include("account/$page.php"); ?>
 </td></tr>

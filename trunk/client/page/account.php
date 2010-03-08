@@ -1,8 +1,8 @@
 <table><tr><td><font size="-1">Tilinumero:
-<?php print_r($recursion->personal->account->details["id"]); ?>
+<?php echo $details["account_id"]; ?>
 </font>
 <th rowspan=2><font size="+4">
-<?php print_r($recursion->personal->account->details["balance"]); ?> mk</font></th>
+<?php echo $details["balance"]; ?> mk</font></th>
 </td></tr><tr><td>
 <font size="+2">Rahaa tilill&auml;</font>&nbsp;
 </td></tr>
@@ -25,13 +25,11 @@ Tapahtumat ajalta
 
 
 <?php
-	$log = $recursion->personal->account->show_log_by_date($from_date, $to_date);
-	$color = 14;
-	if ($log) {
-
-	foreach ($log as $key=>$value){
-	$color --;
-		/*
+$color = 14;
+if ($account_log) {
+    foreach ($account_log as $key => $value) {
+        $color --;
+        /*
 		if ($color == 0) {
 			echo "
 <tr bgcolor=\"#".dechex($color).dechex($color).dechex($color)."\" align=\"right\">
@@ -40,11 +38,12 @@ Tapahtumat ajalta
 			break;
 		   bgcolor=\"#".dechex($color).dechex($color).dechex($color)."\"
 	}*/
-	echo "
+        echo "
 <tr align=\"right\">
-	<td><a href=\"?action=accountlog&id=".$value["id"]."\">".$value["creation"]."</a></td><td><font size=\"+1\">".$value["money"]."</font></td>
+	<td><a href=\"?action=accountlog&id=" . $value["id"] . "\">" . $value["creation"] . "</a></td><td><font size=\"+1\">" . $value["money"] . "</font></td>
 </tr>";
-	}
-	}
+    }
+}
+
 ?>
 </table>
