@@ -1,0 +1,53 @@
+CREATE TABLE  `rahauudistus`.`person` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`name` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL ,
+`address` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL ,
+`country` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL ,
+`phone` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL ,
+`social_security_number` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL ,
+`full_member` INT(1) DEFAULT '0' ,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM;
+
+
+CREATE TABLE  `rahauudistus`.`account` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`balance` DOUBLE NOT NULL DEFAULT  '0',
+`person` INT NOT NULL DEFAULT '0',
+`email` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL ,
+`username` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL ,
+`password` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL ,
+`session` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci,
+`last_refresh` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+UNIQUE (`id`)
+) ENGINE = MYISAM;
+
+CREATE TABLE  `rahauudistus`.`log` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`sql_change` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci,
+`function` TEXT CHARACTER SET utf8 COLLATE utf8_swedish_ci ,
+`creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM ;
+
+
+CREATE TABLE  `rahauudistus`.`note` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`account` INT NOT NULL ,
+`barcode` DOUBLE,
+`money` DOUBLE ,
+`creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM ;
+
+CREATE TABLE  `rahauudistus`.`accountlog` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`account` INT ,
+`money` DOUBLE ,
+`comment` TEXT  CHARACTER SET utf8 COLLATE utf8_swedish_ci,
+`creation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM;
+
+INSERT INTO account (id, person, balance, email, username, password) VALUES (1, 0, 200, 'droppenk@gmail.com', 'Hallitus',  '0f4659dca17b209a4f898a1b9edaba91')
