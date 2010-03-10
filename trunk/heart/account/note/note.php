@@ -42,7 +42,7 @@ class note{
 	function generate_barcode(){
 		// generate a random 11 digit number
 		while (strlen($digits) < 11) {
-			$digits = $digits.rand(0,9);
+			$digits = $digits."".rand(0,9);
 		}
 
 		// Calculation of the check digit
@@ -60,7 +60,7 @@ class note{
 			$X = 10 - $X;
 		}
 
-		return $digits.$X;
+		return $digits."".$X;
 	}
 
 	function get_notes()

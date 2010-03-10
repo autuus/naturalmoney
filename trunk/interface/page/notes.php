@@ -20,9 +20,10 @@ if ($note) {
 	</td>
 </tr>
 <tr>
-<form method="POST" action="?action=notes">
+<form method="GET" action="?">
 	<td>Koodi </td>
-	<td><input type="text" name="deposit_note" size="12"></td>
+    <input type="hidden" name="action" value="notes" size="12">
+	<td><input type="text" name="redeem" size="12"></td>
 	<td><input type="submit" value="Lunasta seteli"></td>
 </form>
 </tr>
