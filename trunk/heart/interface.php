@@ -3,6 +3,8 @@ include("main.php");
 /* interface handles get and post and turns them into json objects */
 do {
 try {
+    $recursion->publical->day_tax_check();
+
 	$return["page"] = "login";
 
     if ($_GET["action"] == "logout") {
@@ -31,8 +33,7 @@ try {
 
 	if ($_GET["action"] == "public") {
 		$return["page"] = "public";
-        $return["money_in_circulation"] =  $recursion->publical->money_in_circulation();
-        $return["user_count"] = $recursion->publical->count_users();
+        $return["public"] = $recursion->publical->gather_information();
 		$return["public_account_log"] = $recursion->publical->show_log_by_date($return["from_date"], $return["to_date"]);
 	}
 
@@ -74,7 +75,7 @@ try {
 		$return["page"] = "tax";
 
 		if ($recursion->account->details["id"] == 1) {
-			$return["taxpage"] = $recursion->publical->tax_all();
+			$return["taxpage"] = $recursion->publical->day_tax();
 		}
 	}
 

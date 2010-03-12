@@ -26,6 +26,13 @@ A:visited {text-decoration: none; color: blue;}
 A:active {text-decoration: none; color: blue;}
 A:hover {text-decoration: none; color: orange;}
 table {border-width: 0px; border-spacing: 0;}
+p1 {
+    font-size:20px;
+    font-weight:bold;
+}
+p {
+    font-size:11px;;
+}
 </style>
 </head>
 <body>

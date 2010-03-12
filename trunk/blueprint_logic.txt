@@ -50,4 +50,9 @@ CREATE TABLE  `rahauudistus`.`accountlog` (
 PRIMARY KEY (  `id` )
 ) ENGINE = MYISAM;
 
+CREATE TABLE  `rahauudistus`.`heartbeat` (
+`date` TEXT  CHARACTER SET utf8 COLLATE utf8_swedish_ci,
+`log` TEXT  CHARACTER SET utf8 COLLATE utf8_swedish_ci
+) ENGINE = MYISAM;
+
 INSERT INTO account (id, person, balance, email, username, password) VALUES (1, 0, 200, 'droppenk@gmail.com', 'Hallitus',  '0f4659dca17b209a4f898a1b9edaba91')
