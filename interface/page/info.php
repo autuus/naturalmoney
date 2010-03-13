@@ -1,4 +1,4 @@
-<div align="left">
+<div align="left" style="width: 80%">
 <p1>Elävä raha</p1>
 <p>Rahajärjestelmä on yksinkertaisimmillaan itsekorjautuva, tasapainoon pyrkivä dynaaminen rahaenergia järjestelmä.</p>
 <p>
