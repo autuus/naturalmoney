@@ -16,11 +16,12 @@ Jos sinulla on 2000mk, joudut maksamaan 1mk veroja. Jne.<br>
 Käyttäjän rekisteröityessä rahajärjestelmän tasapainoksi hallituksen tilille tulee 1250mk, joka on luonnollinen järjestelmän tasapaino eli  1000mk plus 25% luonnollisesta tasapainosta, joka on henkilön paino tässä järjestelmässä. Eli, rahajärjestelmä pyrkii tasapainoon, jossa 1000mk olisi ideaalisesti yksilön tilillä, ja 250mk per henkilö olisi hallituksen tilillä. Verot ja kansalaisuuspalkat maksetaan päivittän. Verot on 1.25 promillea päivässä, joka on 2.4%, 30 päivässä. Tämän vuoksi sitä kutsutaan eläväksi rahaksi.</p>
 <p1>Käteinen</p1>
 <p>
-Käteinen raha toimii niin, että kun haluat nostaa esim 20 markkaa, järjestelmä luo sinulle 12 numeroisen koodin, jolloin sinulta vähennetään 20 markkaa, jonka syöttämällä mille tahansa tilille, talletat tuon rahasumman. Setelistä vähennetään verot joka päivä, joten sekin on elävää, ja ”homehtuu”.<br>
-Valuutan vaihto<br>
+Käteinen raha toimii niin, että kun haluat nostaa esim 20 markkaa, järjestelmä luo sinulle 12 numeroisen koodin, jolloin sinulta vähennetään 20 markkaa, jonka syöttämällä mille tahansa tilille, talletat tuon rahasumman. Setelistä vähennetään verot joka päivä, joten sekin on elävää, ja ”homehtuu”.</p>
+<p1>Valuutan vaihto</p1>
+<p>
 Valuutan vaihtoa voi jokainen henkilö harjoittaa itse, ja sillä tavoin määrittää valuuttakurssin. Mutta alustavasti valuutan vaihtoa harjottaa H2O Finland RY:n nimissä oleva tili, joka on Marko Sihvosen nimissä. Valuuttakurssi pyritään alustavasti pitämään niin, että 6 euroa on 1 markka.</p>
 <br>
-Koodannut Konsta Gogoljuk, 0415370389 droppenk(&auml;t)gmail.com<br>
+<p>Koodannut Konsta Gogoljuk, 0415370389 droppenk(&auml;t)gmail.com</p>
 <br>
 <br>
 </div>
