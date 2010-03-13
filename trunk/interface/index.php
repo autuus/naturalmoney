@@ -20,6 +20,8 @@ if ($redirect) {
 <style type="text/css">
 body {
 	font-family:"Arial",Georgia,Serif;
+    background-image:url('leaf.jpg');
+    background-repeat:no-repeat;
 }
 A:link {text-decoration: none; color: blue;}
 A:visited {text-decoration: none; color: blue;}
@@ -37,7 +39,6 @@ p {
 </head>
 <body>
 <div align="center" style="position: absolute; left: 10%;top: 10%; width: 80%">
-<font size=-1>Rahajärjestelmä on toistaiseksi testikäyt&ouml;ssä</font><br>
 <font color="red"><?php echo $error; ?></font><br>
 <?php
 if ($logged_in)
