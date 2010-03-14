@@ -23,7 +23,7 @@ class database {
 
     function query($query)
     {
-    echo "<font size=-4 color=\"red\">".$query."</font><br>";
+        //echo "<font size=-4 color=\"red\">".$query."</font><br>";
         $result = mysql_query($query, $this->connection);
         if (!$result) {
             throw new Exception("Mysql error: $query");

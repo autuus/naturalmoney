@@ -3,7 +3,7 @@
 class recursion {
 	var $mysql_host = "localhost";
 	var $mysql_database = "rahauudistus";
-	var $mysql_username = "root";
+	var $mysql_username = "rahauudistus";
 	var $mysql_password = "";
     var $government_buypower = 0.25; // how much buyingpower does the
                                                             // government have compared to an individual
