@@ -20,13 +20,14 @@ if ($redirect) {
 <style type="text/css">
 body {
 	font-family:"Arial",Georgia,Serif;
+    color: #005500;
     background-image:url('leaf.jpg');
     background-repeat:no-repeat;
 }
-A:link {text-decoration: none; color: blue;}
-A:visited {text-decoration: none; color: blue;}
-A:active {text-decoration: none; color: blue;}
-A:hover {text-decoration: none; color: orange;}
+A:link {text-decoration: none; color: #855E42; font-weight:bold;;}
+A:visited {text-decoration: none; color: #855E42; font-weight:bold;}
+A:active {text-decoration: none; color: #855E42; font-weight:bold;}
+A:hover {text-decoration: none; color: green; font-weight:bold}
 table {border-width: 0px; border-spacing: 0;}
 p1 {
     font-size:20px;

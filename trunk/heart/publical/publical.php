@@ -26,7 +26,7 @@ class publical {
     {
         $date = date ("Y-m-d");
         if (!$this->recursion->database->heartbeat->select("date='$date'")) {
-            $log = $this->day_tax();
+            $log = $this->hearbeat();
             $this->recursion->database->heartbeat->insert(array(
                     "date" => $date,
                     "log" => $log));
@@ -41,7 +41,8 @@ class publical {
         return $number;
     }
 
-    function day_tax()
+    // hearbeat <3
+    function heartbeat()
     {
         $mans_worth = $this->recursion->equalibrium + $this->recursion->equalibrium * $this->recursion->government_buypower;
         $account = $this->recursion->database->account->select_all();
