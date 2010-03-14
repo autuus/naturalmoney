@@ -14,7 +14,7 @@
 <tr><td>Puhelin numero</td><td><input type="text" value="" name="register[phone]"></td></tr>
 </table>
 <br>Vain <font color="red">*</font>ll&auml; merkityt ovat pakollisia kohtia, mutta jos<br>
-haluat &auml;&auml;nestysoikeudet, sinun on t&auml;ytett&auml;v&auml; kaikki kohdat.<br><br>
+haluat kansalaisuus palkkaa, sinun on t&auml;ytett&auml;v&auml; kaikki kohdat.<br><br>
 <input type="submit" value="Olen lukenut k&auml;ytt&ouml;ehdot, ja hyv&auml;ksyn ne">
 </form>
 
