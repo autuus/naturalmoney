@@ -26,7 +26,7 @@ class publical {
     {
         $date = date ("Y-m-d");
         if (!$this->recursion->database->heartbeat->select("date='$date'")) {
-            $log = $this->hearbeat();
+            $log = $this->heartbeat();
             $this->recursion->database->heartbeat->insert(array(
                     "date" => $date,
                     "log" => $log));

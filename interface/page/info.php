@@ -1,9 +1,9 @@
 <div align="left" style="width: 80%">
 <p1>Elävä raha</p1>
-<p>Rahajärjestelmä on yksinkertaisimmillaan itsekorjautuva, tasapainoon pyrkivä dynaaminen rahaenergia järjestelmä.</p>
+<p>Rahajärjestelmä on yksinkertaisimmillaan itsekorjautuva, tasapainoon pyrkivä dynaaminen rahaenergia järjestelmä simulaatio.</p>
 <p>
 Se koostuu muutamista säännöistä, jotka ovat niin harmoniassa keskenään, että ne vahvistavat toisiaan. Järjestelmässä on matkittu luonnon tapaa korjata epäbalanssit ajan kanssa. Se pyrkii asetettuun 1000mk tasapainoon per henkilö. Jos sinulla on enemmän kuin 1000mk, maksat veroja, jos sinulla on vähemmän kuin 1000mk saat kansalaisuuspalkkaa.</p>
-<p>Systeemissä on periaatteessa vain 3 lähtöasetusta, kaiken muun voi laskea niistä kolmesta.<br>
+<p>Valuuttayksikkö on virtuaalimarkka eli mk. Systeemissä on periaatteessa vain 3 lähtöasetusta, kaiken muun voi laskea niistä kolmesta.<br>
 1, Kansalaisuuspalkka on 1mk / päivä.<br>
 2, Rahajärjestelmän luonnollinen tasapaino on 1000mk / henkilö<br>
 3, Valtion ostovoima verrattuna yksilöön on 25%, tämä määrittää sen, että kuinka suuri auktoriteetti valtio on, eli kuinka paljon ostovoimaa sillä on per kansalainen.<br>
@@ -19,7 +19,7 @@ Käyttäjän rekisteröityessä rahajärjestelmän tasapainoksi hallituksen tili
 Käteinen raha toimii niin, että kun haluat nostaa esim 20 markkaa, järjestelmä luo sinulle 12 numeroisen koodin, jolloin sinulta vähennetään 20 markkaa, jonka syöttämällä mille tahansa tilille, talletat tuon rahasumman. Setelistä vähennetään verot joka päivä, joten sekin on elävää, ja ”homehtuu”.</p>
 <p1>Valuutan vaihto</p1>
 <p>
-Valuutan vaihtoa voi jokainen henkilö harjoittaa itse, ja sillä tavoin määrittää valuuttakurssin. Mutta alustavasti valuutan vaihtoa harjottaa H2O Finland RY:n nimissä oleva tili, joka on Marko Sihvosen nimissä. Valuuttakurssi pyritään alustavasti pitämään niin, että 6 euroa on 1 markka.</p>
+Valuutan vaihtoa voi jokainen henkilö harjoittaa itse, ja sillä tavoin määrittää valuuttakurssin.</p>
 <br>
 <p>Koodannut Konsta Gogoljuk, 0415370389 droppenk(&auml;t)gmail.com</p>
 <br>
