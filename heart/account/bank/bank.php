@@ -22,7 +22,7 @@ class bank {
         return $id;
 	}
 
-    function widraw_money($money)
+    function withdraw_money($money)
     {
         if (round($money, 2) != $money) {
             throw new Exception("Outo summa");
@@ -49,7 +49,7 @@ class bank {
     		throw new Exception("Käyttäjä tiliä ei löytynyt");
     	}
 
-        $this->widraw_money($money);
+        $this->withdraw_money($money);
 
         $to_account = $this->recursion->database->account->select("id=$account_id");
 
