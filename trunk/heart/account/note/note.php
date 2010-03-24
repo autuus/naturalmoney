@@ -6,7 +6,7 @@ class note{
 	}
 
 	public function create($money){
-		$this->recursion->account->bank->widraw_money($money);
+		$this->recursion->account->bank->withdraw_money($money);
 
 		$this->recursion->database->accountlog->insert(
 			array("money"=>"-$money", "comment"=>"Käteis nosto", "account"=>$this->account_id));
