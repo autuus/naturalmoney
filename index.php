@@ -76,13 +76,17 @@
             <div class="document">
             <div>&nbsp;</div>
             	<div class="dochead">
-                	<span class="dhead">Downshifting kiinnostaa nuoria aikuisia</span>
+                	<span class="dhead">Euro boikottiin</span>
                 </div>
                 <div>
 		        </div>
                 <div class="dcontent">
-                    Downshifting eli elämän kohtuullistaminen kiehtoo nuoria aikuisia. Kun yhteiskunnan asettamat paineet ja vaatimukset tuntuvat koko ajan kovenevan, pohtii moni josko työnteon ja kulutuksen vähentämisestä löytyisi ovi parempaan elämänlaatuun.
-                	<a href="http://www.yle.fi/uutiset/kotimaa/2010/03/downshifting_kiinnostaa_nuoria_aikuisia_1531710.html">Artikkeli</a>
+                    Euron boikotoiminen on parempi ratkaisu kuin mikään eurolla saatavan asian boikotoiminen.
+                    Meidän on rakennettava omat rahajärjestelmämme, ja lakattava ylläpitämästä vanhaa,
+                    koska uudella rahajärjestelmällä korjaantuu kaikki ongelmat, hallitus vaihtuu, valta tasottuu,
+                    kaikki lainat mitätöityy, valtion ja henkilökohtaiset, ja koko markkinoiden luonne muuttuu täysin.
+                    En aio kilpailla minkään muun rahajärjestelmän kanssa, vaan integroida, kun sellaisia
+                    suosittuja vaihtopiirejä löytyy.
                 </div>
             </div>
             <div class="rtboxbg">&nbsp;</div>
@@ -92,14 +96,14 @@
             <div class="document">
             <div>&nbsp;</div>
             	<div class="dochead">
-                	<span class="dhead">Rahoita vallankumousta</span>
+                	<span class="dhead">Rahoita vallankumoustasi</span>
                 </div>
                 <div>
         </div>
                 <div class="dcontent">
-                	Rahoita vallankumousta vaihtamalla valuuttaa, tai tarjoamalla palveluita tällä valuutalla, joka luo sille arvoa.<br>
-                    <br>Tiliä hoitaa H2O Finland Ry
-                    Joka on Marko Sihvosen nimissä. <br><a href="http://www.rahauudistus.fi/forum/index.php?topic=7.0">Lisätietoja</a>
+                	Rahoita vallankumouksia vaihtamalla valuuttaa, tai tarjoamalla palveluita tällä valuutalla, joka luo sille arvoa.<br>
+                    <br>Jos tarvitset euro rahoitusta hyväsydämmiseen projektiisi, niin voimme antaa ihmisille vaihtoehtoja, että kelle lahjottaa
+                    kun vaihtaa valuuttaa <br><a href="http://www.rahauudistus.fi/forum/index.php?topic=7.0">tällä hetkellä vain Marko Sihvonen on sillä listalla</a>
                 </div>
             </div>
              <div class="rtboxbg">&nbsp;</div>
