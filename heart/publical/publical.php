@@ -119,7 +119,7 @@ class publical {
             throw new Exception("Käyttäjänimi on jo käytössä");
         }
         if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $array["email"])) {
-            throw new Exception("Sähköpostiosoite in virheellinen");
+            throw new Exception("Sähköpostiosoite on virheellinen");
         }
         if ($person = $this->recursion->database->account->select(
                 "email='" . $array["email"] . "'")) {
