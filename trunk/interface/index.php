@@ -1,6 +1,9 @@
 <?php
-// the engine is designed to work without cookies, so sessions are handled here
 session_start();
+if ($_GET["action"] == "login")
+    if ($_POST["session_id"] != $_SESSION["session_id"])
+        unset($_POST);
+// the engine is designed to work without cookies, so sessions are handled here
 header('Content-Type:text/html; charset=UTF-8');
 $_POST["session"] = $_SESSION["session"];
 $_POST["payment_permission"] = $_SESSION["payment_permission"];
@@ -13,9 +16,13 @@ $_SESSION["payment_permission"] = false;
 if ($redirect) {
 	header("Location: $redirect");
 }
+if ($_GET["action"] == "logout")
+    $_SESSION["session_id"] = rand(1,1000000);
 ?>
 <html>
 <head>
+<link rel="shortcut icon" href="/images/icon.gif">
+<title>Elävä raha</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 body {

@@ -17,10 +17,67 @@ class account {
 
 		if ($this->details["person"]) {
 			//include("person/person.php");
-			$this->person =  $this->recursion->database->person->select("id='" . $this->details["person"] . "'");
+			$this->details["person"] =  $this->recursion->database->person->select("id='" . $this->details["person"] . "'");
+            unset($this->details["person"]["social_security_number"]);
 		}
         return true;
 	}
+
+    function reload()
+    {
+		$this->details = $this->recursion->database->account->select("id=".$this->details["id"]);
+		if ($this->details["person"]) {
+			$this->details["person"] =  $this->recursion->database->person->select("id='" . $this->details["person"] . "'");
+            unset($this->details["person"]["social_security_number"]);
+		}
+    }
+
+    function edit($array)
+    {
+        if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $array["email"])) {
+            throw new Exception("Sähköpostiosoite on virheellinen");
+        }
+        if ($found = $this->recursion->database->account->select("email='" . $array["email"] . "'"))
+        {
+            if ($found["id"] != $this->details["id"]) {
+                throw new Exception("Sähköposti osoite on jo käytössä");
+            }
+        }
+
+        if ($array["name"])
+            $person["name"] = $array["name"];
+        if ($array["address"])
+            $person["address"] = $array["address"];
+        if ($array["country"])
+            $person["country"] = $array["country"];
+        if ($array["phone"])
+            $person["phone"] = $array["phone"];
+
+        if ($array["social_security_number"])
+            $person["social_security_number"] = $array["social_security_number"];
+
+        if ($person["social_security_number"] && !$this->details["person"]) {
+
+            $this->recursion->database->person->insert($person);
+
+            $new_person = $this->recursion->database->person->select(
+                "social_security_number='" . $person["social_security_number"] . "'");
+
+            $account["person"] = $new_person["id"];
+        }
+        else
+            $this->recursion->database->person->update($person, "id=".$this->details["person"]["id"]);
+
+        if ($array["email"])
+            $account["email"] = $array["email"];
+        if ($array["password"])
+            $account["password"] = md5($array["password"]);
+
+        $this->recursion->database->account->update($account, "id=".$this->details["id"]);
+
+        $this->reload();
+        return true;
+    }
 
     function logged_in($session)
     {

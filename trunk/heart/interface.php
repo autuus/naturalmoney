@@ -53,6 +53,7 @@ try {
     }
 	$return["logged_in"] = true;
 	$return["details"]["username"] = $recursion->account->details["username"];
+	$return["details"]["email"] = $recursion->account->details["email"];
 	$return["details"]["account_code"] = $recursion->account->details["code"];
 	$return["details"]["balance"] = $recursion->account->details["balance"];
 
@@ -78,6 +79,25 @@ try {
 			$return["taxpage"] = $recursion->publical->day_tax();
 		}
 	}
+
+    if ($_GET["action"] == "edit") {
+        $return["page"] = "edit";
+
+        $return["person"] = $recursion->account->details["person"];
+
+        if ($_POST["edit"])
+        {
+            if ($recursion->account->details["password"] != md5($_POST["password"]))
+                throw new Exception("Salasana ei täsmää");
+
+            $recursion->account->edit($_POST["edit"]);
+
+	        $return["details"]["email"] = $recursion->account->details["email"];
+            $return["person"] = $recursion->account->details["person"];
+            throw new Exception("Tallennettu!");
+        }
+
+    }
 
     if ($_GET["action"] == "accountlog") {
         $return["page"] = "accountlog";
