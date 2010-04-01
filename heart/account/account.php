@@ -17,7 +17,7 @@ class account {
 
 		if ($this->details["person"]) {
 			//include("person/person.php");
-			$this->details["person"] =  $this->recursion->database->person->select("id='" . $this->details["person"] . "'");
+			$this->details["person"] =  $this->recursion->database->person->select("id=" . $this->details["person"]);
             unset($this->details["person"]["social_security_number"]);
 		}
         return true;
@@ -27,7 +27,7 @@ class account {
     {
 		$this->details = $this->recursion->database->account->select("id=".$this->details["id"]);
 		if ($this->details["person"]) {
-			$this->details["person"] =  $this->recursion->database->person->select("id='" . $this->details["person"] . "'");
+			$this->details["person"] =  $this->recursion->database->person->select("id=" . $this->details["person"]);
             unset($this->details["person"]["social_security_number"]);
 		}
     }
@@ -37,8 +37,9 @@ class account {
         if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $array["email"])) {
             throw new Exception("Sähköpostiosoite on virheellinen");
         }
-        if ($found = $this->recursion->database->account->select("email='" . $array["email"] . "'"))
-        {
+        if ($found = $this->recursion->database->account->select(
+            array("email" => $array["email"]))
+        ){
             if ($found["id"] != $this->details["id"]) {
                 throw new Exception("Sähköposti osoite on jo käytössä");
             }
@@ -61,7 +62,7 @@ class account {
             $this->recursion->database->person->insert($person);
 
             $new_person = $this->recursion->database->person->select(
-                "social_security_number='" . $person["social_security_number"] . "'");
+                array("social_security_number" => $person["social_security_number"]));
 
             $account["person"] = $new_person["id"];
         }
@@ -81,8 +82,9 @@ class account {
 
     function logged_in($session)
     {
-    	if ($account = $this->recursion->database->account->select("session='" .
-    		md5($_SERVER['REMOTE_ADDR'].$session)."'")) {
+    	if ($account = $this->recursion->database->account->select(
+            array("session" => md5($_SERVER['REMOTE_ADDR'].$session)))
+        ) {
     		$last_refresh = strtotime($account["last_refresh"]);
             $now = time();
     		// session timeout is 15 minutes
@@ -109,8 +111,8 @@ class account {
 
     	$session = rand(10, 10000);
         $this->recursion->database->account->update(
-            "session='" . md5($_SERVER['REMOTE_ADDR'].$session) . "', last_refresh=NOW()",
-            "id='" . $login["id"] . "'");
+            array("session" => md5($_SERVER['REMOTE_ADDR'].$session), "last_refresh" => "NOW()"),
+            "id=" . $login["id"]);
 
         return $session;
     }
@@ -119,7 +121,7 @@ class account {
     {
         $account = $this->recursion->database->account->update(
         "session=0",
-        "session='" .md5($_SERVER['REMOTE_ADDR'].$session)."'");
+        array("session" => md5($_SERVER['REMOTE_ADDR'].$session)));
     }
 }
 

@@ -119,7 +119,9 @@ try {
             $recursion->account->note->redeem($_GET["redeem"]);
         }
 
-    	$return["note"] = $recursion->database->note->select("barcode='".$_GET["barcode"]."'");
+    	$return["note"] = $recursion->database->note->select(
+            array( "barcode" => $_GET["barcode"])
+        );
     	$return["notes"] = $notes = $recursion->account->note->get_notes();
     }
 }

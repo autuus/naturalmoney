@@ -47,7 +47,7 @@ class table
 
 	public function update($how, $where = 1){
 		$how = $this->stringify($how);
-		$where = $this->stringify($where);
+		$where = $this->stringify($where, true);
 
 		$query = "UPDATE ".$this->table." SET $how WHERE $where";
 		$this->log($query);
@@ -56,17 +56,19 @@ class table
 
     function delete($where)
 	{
-		$where = $this->stringify($where);
+		$where = $this->stringify($where, true);
 
 		$query = "DELETE FROM ".$this->table." WHERE $where";
 		$this->log($query);
 		return $this->recursion->database->query($query);
 	}
 
-    function antihack($value)
+    function antihack($value, $and = false)
     {
         $value = str_replace("\"", "&quot;", $value);
-        $value = str_replace("\'", "&apos;", $value);
+        $value = str_replace("'", "&apos;", $value);
+        if ($and)
+            return $value;
         $value = str_replace("<", "&lt;", $value);
         $value = str_replace(">", "&gt;", $value);
         return $value;
@@ -77,8 +79,8 @@ class table
 		if (gettype($array) == "array") {
 			$chars_to_delete = 1;
 			foreach($array as $key => $value) {
-                $value = $this->antihack($value);
-                $key = $this->antihack($key);
+                $value = $this->antihack($value, $and);
+                $key = $this->antihack($key, $and);
 
 				if ($value == "NOW()")
 					$line .= "$key = NOW(),";
@@ -93,6 +95,11 @@ class table
 			// delete the last , or AND
 			return substr($line, 0, - $chars_to_delete);
 		}
+        else
+        {
+            $array = $this->antihack($array, $and);
+        }
+
 		return $array;
 	}
 

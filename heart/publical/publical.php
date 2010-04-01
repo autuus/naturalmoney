@@ -25,7 +25,9 @@ class publical {
     function day_tax_check()
     {
         $date = date ("Y-m-d");
-        if (!$this->recursion->database->heartbeat->select("date='$date'")) {
+        if (!$this->recursion->database->heartbeat->select(
+            array( "date" => $date))
+        ) {
             $log = $this->heartbeat();
             $this->recursion->database->heartbeat->insert(array(
                     "date" => $date,
@@ -115,14 +117,14 @@ class publical {
     function register($array)
     {
         if ($person = $this->recursion->database->account->select(
-                "username='" . $array["username"] . "'")) {
+                array("username" => $array["username"]))) {
             throw new Exception("Käyttäjänimi on jo käytössä");
         }
         if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $array["email"])) {
             throw new Exception("Sähköpostiosoite on virheellinen");
         }
         if ($person = $this->recursion->database->account->select(
-                "email='" . $array["email"] . "'")) {
+                array("email" => $array["email"]))) {
             throw new Exception("Sähköposti osoite on jo käytössä");
         }
 
@@ -133,16 +135,12 @@ class publical {
         $person["social_security_number"] = $array["social_security_number"];
 
         if ($person["social_security_number"]) {
-            if ($this->recursion->database->person->select("social_security_number='" . $array["social_security_number"] . "'")) {
-                throw new Exception("Sosiaaliturvatunnus on jo käytössä, jos epäilette henkilöllisyys rikosta, soittakaa asiakaspalveluun.");
-            }
-
             if (!$this->recursion->database->person->insert($person)) {
                 throw new Exception("Tietokantavirhe, henkilöä ei luotu");
             }
 
             $new_person = $this->recursion->database->person->select(
-                "social_security_number='" . $person["social_security_number"] . "'");
+               array("social_security_number" => $person["social_security_number"]));
 
             $account["person"] = $new_person["id"];
         }
