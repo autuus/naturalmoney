@@ -27,12 +27,14 @@ class note{
 	}
 
 	function redeem($barcode){
-		if (!$note = $this->recursion->database->note->select("barcode='".$barcode."'")) {
+		if (!$note = $this->recursion->database->note->select(
+            array("barcode" => $barcode))
+        ){
 			// Trace the note.
 			throw new Exception("Viivakoodi ei kelpaa.");
 		}
 		$balance = $note["money"] + $this->recursion->account->details["balance"];
-		$this->recursion->database->account->update("balance='$balance'", "id=".$this->account_id);
+		$this->recursion->database->account->update("balance=$balance", "id=".$this->account_id);
 		$this->recursion->database->accountlog->insert(
 			array("money"=>"+".$note["money"], "comment"=>"Rahan talletus", "account"=>$this->account_id));
 
