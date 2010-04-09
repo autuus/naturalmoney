@@ -22,7 +22,7 @@
                 <div id="about">
                 	<div class="lthead" align="center"><span class="tphead">Luonnon raha</span></div>
                     <div class="ltdetail">
-                    Elävä raha on yksinkertaisimmillaan itsekorjautuva, tasapainoon pyrkivä rahaenergia järjestelmä simulaatio.
+                    Elävä raha on yksinkertaisimmillaan itsekorjautuva, tasapainoon pyrkivä rahaenergiajärjestelmäsimulaatio.
                     </div>
                     <div class="link" onclick="window.location = '/interface/?action=info'">
                     	Lisätietoja
@@ -41,6 +41,7 @@
                     	<li><a href="http://supportmarkosihvonen.com/">Support Marko Sihvonen</a></li>
 						<li><a href="http://www.zeitgeist.fi/joomla/">Zeitgeist liike</a></li>
 						<li><a href="http://talousdemokratia.webs.com/">Talousdemokratia</a></li>
+						<li><a href="http://www.prout.org/">PROUT</a></li>
                     </ul>
                 </div>
                 <!--about ends-->
@@ -77,17 +78,15 @@
             <div class="document">
             <div>&nbsp;</div>
             	<div class="dochead">
-                	<span class="dhead">Euro boikottiin</span>
+                	<span class="dhead">Päivitys sivustoon</span>
                 </div>
                 <div>
 		        </div>
                 <div class="dcontent">
-                    Euron boikotoiminen on parempi ratkaisu kuin mikään eurolla saatavan asian boikotoiminen.
-                    Meidän on rakennettava omat rahajärjestelmämme, ja lakattava ylläpitämästä vanhaa,
-                    koska uudella rahajärjestelmällä korjaantuu kaikki ongelmat, hallitus vaihtuu, valta tasottuu,
-                    kaikki lainat mitätöityy, valtion ja henkilökohtaiset, ja koko markkinoiden luonne muuttuu täysin.
-                    En aio kilpailla minkään muun rahajärjestelmän kanssa, vaan integroida, kun sellaisia
-                    suosittuja vaihtopiirejä löytyy.
+                    Poistin lahjoitus mahdollisuudet, koska se aiheutti suuria väärinymmärryksiä
+                    sivuston motiivin suhteen.
+                    Markkoja voi vieläkin myydä euroihin jos niitä omistaa, mutta
+                    valuutan vaihtoa emme ala harjoittamaan ainakaan nyt.
                 </div>
             </div>
             <div class="rtboxbg">&nbsp;</div>
@@ -97,14 +96,17 @@
             <div class="document">
             <div>&nbsp;</div>
             	<div class="dochead">
-                	<span class="dhead">Rahoita vallankumoustasi</span>
+                	<span class="dhead">PROUT</span>
                 </div>
                 <div>
         </div>
                 <div class="dcontent">
-                	Rahoita vallankumouksia vaihtamalla valuuttaa, tai tarjoamalla palveluita tällä valuutalla, joka luo sille arvoa.<br>
-                    <br>Jos tarvitset euro rahoitusta hyväsydämmiseen projektiisi, niin voimme antaa ihmisille vaihtoehtoja, että kelle lahjottaa
-                    kun vaihtaa valuuttaa <br><a href="http://www.rahauudistus.fi/forum/index.php?topic=7.0">tällä hetkellä vain Marko Sihvonen on sillä listalla</a>
+                	PROUT (Progressive Utilisation Theory) on uudenlainen yhteiskuntamalli, joka antaa esimerkin yleisesti hyväksytystä moraalista.
+                    Se on käytännöllinen malli kommunismin ja kapitalismin pohjalta.
+                    Prout pohjautuu järjestelmään, joka ottaa huomioon ihmisen perustarpeet, suojelee luontoa ja muita elämänmuotoja
+                    ja pyrkii tasapainottamaan henkisen ja fyysisen maailman.
+                    <a href="http://www.prout.org/">PROUT International</a>
+                    <a href="http://proutist.fi/">PROUT Suomi</a>
                 </div>
             </div>
              <div class="rtboxbg">&nbsp;</div>
