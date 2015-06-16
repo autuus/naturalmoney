@@ -1,0 +1,1 @@
+Natural money is based on fractality, the mathematics of nature. This is I's attempt to stop all the corporative nonsense in the world. http://www.naturalmoney.org/
